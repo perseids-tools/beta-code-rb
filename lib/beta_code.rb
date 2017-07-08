@@ -2,7 +2,7 @@ require 'json'
 
 class BetaCode
   def self.greek_to_beta_code(greek)
-    'xai=re w)= ko/sme'
+    greek.chars.map { |c| unicode_to_beta_code_map[c] || c }.join('')
   end
 
   def self.beta_code_to_greek(beta_code)
@@ -18,7 +18,7 @@ class BetaCode
   end
 
   def self.read_vendor_file(file)
-    File.read(File.expand_path("../vendor/#{file}", __FILE__))
+    File.read(File.expand_path("../../vendor/#{file}", __FILE__))
   end
 
   private_class_method :beta_code_to_unicode_map, :unicode_to_beta_code_map, :read_vendor_file
