@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
   s.files       = ['lib/beta_code.rb']
   s.homepage    = 'https://github.com/zfletch/beta-code-rb'
   s.license     = 'MIT'
+
+  s.add_development_dependency 'test-unit', '~> 3.2'
 end
