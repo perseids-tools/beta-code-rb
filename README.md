@@ -9,7 +9,17 @@ Converts Greek beta code to Greek characters and vice versa.
 Installation
 ------------
 
-`gem install beta_code`
+Add this line to your application's Gemfile:
+
+`gem 'beta_code'`
+
+And then execute:
+
+`$ bundle`
+
+Or install it yourself as:
+
+`$ gem install beta_code`
 
 Usage
 -----
