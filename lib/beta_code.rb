@@ -2,7 +2,7 @@ require 'json'
 
 class BetaCode
   def self.greek_to_beta_code(greek)
-    greek.chars.map { |c| unicode_to_beta_code_map[c] || c }.join('')
+    greek.unicode_normalize.chars.map { |c| unicode_to_beta_code_map[c] || c }.join('')
   end
 
   def self.beta_code_to_greek(beta_code)
