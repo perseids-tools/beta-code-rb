@@ -26,6 +26,12 @@ class BetaCodeTest < Test::Unit::TestCase
       BetaCode::greek_to_beta_code('δδΔς'),
       'random characters',
     )
+
+    assert_equal(
+      '*pollh\\ me\\n e)n brotoi=si kou)k a)nw/numos qea\\ ke/klhmai *ku/pris ou)ranou= t᾿ e)/sw:',
+      BetaCode::greek_to_beta_code('Πολλὴ μὲν ἐν βροτοῖσι κοὐκ ἀνώνυμος θεὰ κέκλημαι Κύπρις οὐρανοῦ τ᾿ ἔσω·'),
+      'unicode normalization',
+    )
   end
 
   def test_beta_code_to_greek
