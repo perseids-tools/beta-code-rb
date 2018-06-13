@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'beta_code'
-  s.version     = '0.0.5'
+  s.version     = '0.0.6'
   s.date        = '2018-02-17'
   s.summary     = 'Converts Greek beta code to Greek characters and vice versa'
   s.description = 'Converts Greek beta code to Greek characters and vice versa'
