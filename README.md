@@ -1,13 +1,10 @@
-Beta Code Converter for Ruby
-============================
+# Beta Code Converter for Ruby
 
-Overview
---------
+## Overview
 
 Converts Greek beta code to Greek characters and vice versa.
 
-Installation
-------------
+## Installation
 
 Add this line to your application's Gemfile:
 
@@ -21,8 +18,7 @@ Or install it yourself as:
 
 `$ gem install beta_code`
 
-Usage
------
+## Usage
 
 ```ruby
 require 'beta_code'
@@ -35,12 +31,21 @@ BetaCode::beta_code_to_greek 'mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'
 
 ```
 
-Tests
------
+## Tests
 
 `bundle exec ruby test/test_beta_code.rb`
 
-Notes
------
+## Updating JSON
+
+`git pull -s subtree beta-code-json master`
+
+## Publishing Gem
+
+```bash
+gem build beta_code.gemspec
+gem push beta_code-X.Y.Z.gem
+```
+
+## Notes
 
 For the mappings between beta code and Unicode, see [https://github.com/zfletch/beta-code-json](https://github.com/zfletch/beta-code-json).
