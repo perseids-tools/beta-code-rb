@@ -37,7 +37,17 @@ BetaCode::beta_code_to_greek 'mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'
 
 ## Updating JSON
 
-`git pull -s subtree beta-code-json master`
+```bash
+git subtree pull --prefix vendor/beta-code-json/ https://github.com/zfletch/beta-code-json master --squash
+```
+
+In the case of a merge conflict:
+
+```bash
+git checkout --theirs vendor/beta-code-json/
+git add vendor/beta-code-json
+git commit
+```
 
 ## Publishing Gem
 
@@ -45,6 +55,14 @@ BetaCode::beta_code_to_greek 'mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'
 gem build beta_code.gemspec
 gem push beta_code-X.Y.Z.gem
 ```
+
+## Publishing
+
+* Bump version in `beta_code.gemspec`
+* Commit and push to GitHub
+* On GitHub, create a new release
+* Run `gem build beta_code.gemspec`
+* Run `gem push beta_code-X.Y.Z.gem`
 
 ## Notes
 
