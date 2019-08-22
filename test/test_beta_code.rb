@@ -64,5 +64,10 @@ class BetaCodeTest < Test::Unit::TestCase
       BetaCode::beta_code_to_greek('dD*Ds2'),
       'random characters',
     )
+
+    assert_equal(
+      BetaCode::beta_code_to_greek('*o(/rkos *a)/zwton *e(/llhnas *a)=pis'),
+      'Ὅρκος Ἄζωτον Ἕλληνας Ἆπις',
+    )
   end
 end
