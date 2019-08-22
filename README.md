@@ -49,13 +49,6 @@ git add vendor/beta-code-json
 git commit
 ```
 
-## Publishing Gem
-
-```bash
-gem build beta_code.gemspec
-gem push beta_code-X.Y.Z.gem
-```
-
 ## Publishing
 
 * Bump version in `beta_code.gemspec`
