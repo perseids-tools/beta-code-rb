@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    beta_code (0.0.8)
+    beta_code (0.0.9)
 
 GEM
   remote: https://rubygems.org/
@@ -18,4 +18,4 @@ DEPENDENCIES
   test-unit (~> 3.2)
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

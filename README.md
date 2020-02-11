@@ -38,7 +38,7 @@ BetaCode::beta_code_to_greek 'mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'
 ## Updating JSON
 
 ```bash
-git subtree pull --prefix vendor/beta-code-json/ https://github.com/zfletch/beta-code-json master --squash
+git subtree pull --prefix vendor/beta-code-json/ https://github.com/perseids-tools/beta-code-json master --squash
 ```
 
 In the case of a merge conflict:
@@ -59,4 +59,4 @@ git commit
 
 ## Notes
 
-For the mappings between beta code and Unicode, see [https://github.com/zfletch/beta-code-json](https://github.com/zfletch/beta-code-json).
+For the mappings between beta code and Unicode, see [https://github.com/perseids-tools/beta-code-json](https://github.com/perseids-tools/beta-code-json).
