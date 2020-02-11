@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.name        = 'beta_code'
-  s.version     = '0.0.9'
-  s.date        = '2018-02-17'
-  s.summary     = 'Converts Greek beta code to Greek characters and vice versa'
-  s.description = 'This is a gem that converts from Ancient Greek beta code to Unicode characters and vice versa'
+  s.version     = '0.0.10'
+  s.date        = '2020-02-11'
+  s.summary     = 'Converts Greek Beta Code to Greek characters and vice versa'
+  s.description = 'Gem to convert from Ancient Greek Beta Code to Unicode characters and vice versa'
   s.authors     = ['perseids']
   s.email       = 'perseids@tufts.edu'
   s.files       = ['lib/beta_code.rb'] + Dir['vendor/**/*']

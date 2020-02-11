@@ -1,8 +1,6 @@
 # Beta Code Converter for Ruby
 
-## Overview
-
-Converts Greek beta code to Greek characters and vice versa.
+Converts Greek Beta Code to Greek characters and vice versa.
 
 ## Installation
 
@@ -59,4 +57,4 @@ git commit
 
 ## Notes
 
-For the mappings between beta code and Unicode, see [https://github.com/perseids-tools/beta-code-json](https://github.com/perseids-tools/beta-code-json).
+For the mappings between Beta Code and Unicode, see [https://github.com/perseids-tools/beta-code-json](https://github.com/perseids-tools/beta-code-json).
