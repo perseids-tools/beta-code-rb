@@ -26,7 +26,13 @@ BetaCode::greek_to_beta_code 'χαῖρε ὦ κόσμε'
 
 BetaCode::beta_code_to_greek 'mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'
 # => 'μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος'
+```
 
+### With additional mappings
+
+```ruby
+BetaCode::beta_code_to_greek('f2a/nac', custom_map: { f2: 'ϝ' })
+# => 'ϝάναξ'
 ```
 
 ## Tests

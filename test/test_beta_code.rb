@@ -32,6 +32,12 @@ class BetaCodeTest < Test::Unit::TestCase
       BetaCode::greek_to_beta_code('Πολλὴ μὲν ἐν βροτοῖσι κοὐκ ἀνώνυμος θεὰ κέκλημαι Κύπρις οὐρανοῦ τ᾿ ἔσω·'),
       'unicode normalization',
     )
+
+    assert_equal(
+      'mou_s',
+      BetaCode::greek_to_beta_code('μοῡς', custom_map: { ᾱ: 'a_', ῑ: 'i_', ῡ: 'u_' }),
+      'custom map',
+    )
   end
 
   def test_beta_code_to_greek
@@ -68,6 +74,12 @@ class BetaCodeTest < Test::Unit::TestCase
     assert_equal(
       BetaCode::beta_code_to_greek('*o(/rkos *a)/zwton *e(/llhnas *a)=pis'),
       'Ὅρκος Ἄζωτον Ἕλληνας Ἆπις',
+    )
+
+    assert_equal(
+      'μοῡς',
+      BetaCode::beta_code_to_greek('mou_s', custom_map: { a_: 'ᾱ', i_: 'ῑ', u_: 'ῡ' }),
+      'custom map',
     )
   end
 end

@@ -1,11 +1,14 @@
 require 'json'
 
 class BetaCode
-  def self.greek_to_beta_code(greek)
-    greek.unicode_normalize.chars.map { |c| unicode_to_beta_code_map[c] || c }.join('')
+  def self.greek_to_beta_code(greek, custom_map: {})
+    map = unicode_to_beta_code_map.merge(stringify_keys(custom_map))
+
+    greek.unicode_normalize.chars.map { |c| map[c] || c }.join('')
   end
 
-  def self.beta_code_to_greek(beta_code)
+  def self.beta_code_to_greek(beta_code, custom_map: {})
+    map = beta_code_to_unicode_map.merge(stringify_keys(custom_map))
     beta_code_characters = beta_code.chars
     greek_characters = []
     start = 0
@@ -19,8 +22,8 @@ class BetaCode
       while last <= max_length
         slice = beta_code_characters[start...last].join('')
 
-        if beta_code_to_unicode_map[slice]
-          current_character = beta_code_to_unicode_map[slice]
+        if map[slice]
+          current_character = map[slice]
           new_start = last
         end
 
@@ -54,5 +57,16 @@ class BetaCode
     File.read(File.expand_path("../../vendor/#{file}", __FILE__))
   end
 
-  private_class_method :beta_code_to_unicode_map, :unicode_to_beta_code_map, :read_vendor_file, :sigma_to_end_of_word_sigma, :max_beta_code_character_length
+  def self.stringify_keys(hash)
+    {}.tap do |stringified_hash|
+      hash.each { |k, v| stringified_hash[k.to_s] = v }
+    end
+  end
+
+  private_class_method :beta_code_to_unicode_map,
+    :unicode_to_beta_code_map,
+    :read_vendor_file,
+    :sigma_to_end_of_word_sigma,
+    :max_beta_code_character_length,
+    :stringify_keys
 end
