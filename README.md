@@ -21,17 +21,17 @@ Or install it yourself as:
 ```ruby
 require 'beta_code'
 
-BetaCode::greek_to_beta_code 'χαῖρε ὦ κόσμε'
+BetaCode.greek_to_beta_code 'χαῖρε ὦ κόσμε'
 # => 'xai=re w)= ko/sme'
 
-BetaCode::beta_code_to_greek 'mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'
+BetaCode.beta_code_to_greek 'mh=nin a)/eide qea\\ *phlhi+a/dew *)axilh=os'
 # => 'μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος'
 ```
 
 ### With additional mappings
 
 ```ruby
-BetaCode::beta_code_to_greek('f2a/nac', custom_map: { f2: 'ϝ' })
+BetaCode.beta_code_to_greek('f2a/nac', custom_map: { f2: 'ϝ' })
 # => 'ϝάναξ'
 ```
 

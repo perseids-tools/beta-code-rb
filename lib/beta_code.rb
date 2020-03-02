@@ -7,6 +7,11 @@ class BetaCode
     greek.unicode_normalize.chars.map { |c| map[c] || c }.join('')
   end
 
+  # This method is absurd. But having the logic all in one method makes it easier to work with than
+  # having it spread across multiple methods.
+  # It also makes it easier to compare the logic to the Beta Code libraries in other languages.
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize
   def self.beta_code_to_greek(beta_code, custom_map: {})
     map = beta_code_to_unicode_map.merge(stringify_keys(custom_map))
     beta_code_characters = beta_code.chars
@@ -36,13 +41,15 @@ class BetaCode
 
     sigma_to_end_of_word_sigma(greek_characters.join(''))
   end
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/AbcSize
 
   def self.max_beta_code_character_length
     @max_beta_code_character_length ||= beta_code_to_unicode_map.keys.map(&:length).max
   end
 
   def self.sigma_to_end_of_word_sigma(string)
-    string.gsub(/σ(?=[,.:;·\s]|$)/, 'ς');
+    string.gsub(/σ(?=[,.:;·\s]|$)/, 'ς')
   end
 
   def self.beta_code_to_unicode_map

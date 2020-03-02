@@ -1,0 +1,19 @@
+inherit_gem:
+  gnar-style:
+    - rubocop/rubocop_gem.yml
+
+AllCops:
+  TargetRubyVersion: 2.4
+
+Metrics/LineLength:
+  Max: 120
+  Severity: refactor
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Metrics/MethodLength:
+  Max: 15
+  ExcludedMethods:
+    - test_greek_to_beta_code
+    - test_beta_code_to_greek

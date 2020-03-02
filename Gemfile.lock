@@ -6,15 +6,45 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.0)
+    gnar-style (0.10.0)
+      rubocop (~> 0.78)
+      rubocop-performance
+      rubocop-rails (~> 2.2.0)
+      thor
+    jaro_winkler (1.5.4)
+    parallel (1.19.1)
+    parser (2.7.0.4)
+      ast (~> 2.4.0)
     power_assert (1.1.5)
+    rack (2.2.2)
+    rainbow (3.0.0)
+    rexml (3.2.4)
+    rubocop (0.80.1)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.7.0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      rexml
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.5.2)
+      rubocop (>= 0.71.0)
+    rubocop-rails (2.2.1)
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
+    ruby-progressbar (1.10.1)
     test-unit (3.3.5)
       power_assert
+    thor (1.0.1)
+    unicode-display_width (1.6.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   beta_code!
+  gnar-style (~> 0.10)
   test-unit (~> 3.2)
 
 BUNDLED WITH
