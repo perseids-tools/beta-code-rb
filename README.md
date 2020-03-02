@@ -16,6 +16,8 @@ Or install it yourself as:
 
 `$ gem install beta_code`
 
+(See project at [rubygems.org](https://rubygems.org/gems/beta_code))
+
 ## Usage
 
 ```ruby
