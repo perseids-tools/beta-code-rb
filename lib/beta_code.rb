@@ -17,6 +17,7 @@ class BetaCode
     beta_code_characters = beta_code.chars
     greek_characters = []
     start = 0
+    max_beta_code_character_length = map.keys.map(&:length).max
 
     while start <= beta_code_characters.length
       current_character = beta_code_characters[start]
@@ -44,10 +45,6 @@ class BetaCode
   # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/AbcSize
 
-  def self.max_beta_code_character_length
-    @max_beta_code_character_length ||= beta_code_to_unicode_map.keys.map(&:length).max
-  end
-
   def self.sigma_to_end_of_word_sigma(string)
     string.gsub(/σ(?=[,.:;·\s]|$)/, 'ς')
   end
@@ -74,6 +71,5 @@ class BetaCode
     :unicode_to_beta_code_map,
     :read_vendor_file,
     :sigma_to_end_of_word_sigma,
-    :max_beta_code_character_length,
     :stringify_keys
 end
