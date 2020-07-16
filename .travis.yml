@@ -1,7 +1,0 @@
-rvm:
-  - 2.4.0
-before_install:
-  - bundle install
-script:
-  - bundle exec ruby test/*
-  - bundle exec rubocop
