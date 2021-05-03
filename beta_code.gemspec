@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name                  = 'beta_code'
-  s.version               = '0.1.1'
+  s.version               = '1.0.0'
   s.summary               = 'Converts Greek Beta Code to Greek characters and vice versa'
   s.description           = 'Gem to convert from Ancient Greek Beta Code to Unicode characters and vice versa'
   s.authors               = ['perseids']
