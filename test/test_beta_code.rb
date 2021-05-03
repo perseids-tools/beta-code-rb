@@ -49,6 +49,12 @@ class BetaCodeTest < Test::Unit::TestCase
     )
 
     assert_equal(
+      'w(=|*(=w|',
+      BetaCode.greek_to_beta_code('ᾧᾯ'),
+      'many diacritics',
+    )
+
+    assert_equal(
       'mou_s',
       BetaCode.greek_to_beta_code('μοῡς', custom_map: { ᾱ: 'a_', ῑ: 'i_', ῡ: 'u_' }),
       'custom map',
@@ -103,8 +109,12 @@ class BetaCodeTest < Test::Unit::TestCase
     )
 
     assert_equal(
-      BetaCode.beta_code_to_greek('*o(/rkos *a)/zwton *e(/llhnas *a)=pis'),
-      'Ὅρκος Ἄζωτον Ἕλληνας Ἆπις',
+      [
+        '*o(/rkos *a)/zwton *e(/llhnas *a)=pis *w(=|',
+        '*(/orkos *)/azwton *(/ellhnas *)=apis *(=|w',
+        '*(/orkos *)/azwton *(/ellhnas *)=apis *(=w|',
+      ].map { |n| BetaCode.beta_code_to_greek(n) },
+      ['Ὅρκος Ἄζωτον Ἕλληνας Ἆπις ᾯ'] * 3,
     )
 
     assert_equal(
