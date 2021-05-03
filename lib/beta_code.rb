@@ -4,7 +4,7 @@ class BetaCode
   def self.greek_to_beta_code(greek, custom_map: {})
     map = unicode_to_beta_code_map.merge(stringify_keys(custom_map))
 
-    greek.unicode_normalize.chars.map { |c| map[c] || c }.join('')
+    greek.unicode_normalize.chars.map { |c| map[c] || c }.join
   end
 
   # This method is absurd. But having the logic all in one method makes it easier to work with than
@@ -26,7 +26,7 @@ class BetaCode
 
       last = new_start
       while last <= max_length
-        slice = beta_code_characters[start...last].join('')
+        slice = beta_code_characters[start...last].join
 
         if map[slice]
           current_character = map[slice]
@@ -40,7 +40,7 @@ class BetaCode
       start = new_start
     end
 
-    sigma_to_end_of_word_sigma(greek_characters.join(''))
+    sigma_to_end_of_word_sigma(greek_characters.join)
   end
   # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/AbcSize
