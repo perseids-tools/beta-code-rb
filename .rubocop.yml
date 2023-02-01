@@ -15,10 +15,13 @@ Style/StringLiterals:
 
 Metrics/MethodLength:
   Max: 15
-  IgnoredMethods:
+  AllowedMethods:
     - test_greek_to_beta_code
     - test_beta_code_to_greek
 
 Metrics/ClassLength:
   Exclude:
     - 'test/**/*'
+
+Gemspec/RequireMFA:
+  Enabled: false
