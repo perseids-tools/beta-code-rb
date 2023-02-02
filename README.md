@@ -58,6 +58,7 @@ git commit
 ## Publishing
 
 * Bump version in `beta_code.gemspec`
+* Run `bundle`
 * Commit and push to GitHub
 * On GitHub, create a new release
 * Run `gem build beta_code.gemspec`
